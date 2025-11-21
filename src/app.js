@@ -12,9 +12,8 @@ app.use(bodyParser.json());
 
 // === CORS ===
 app.use(cors({
-  origin: ["http://app.sidome.id/"], // subdomain react
-  methods: ["GET","POST","PUT","DELETE"],
-  credentials: true
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
+  credentials: true
 }));
 
 // === Static File Serving ===
